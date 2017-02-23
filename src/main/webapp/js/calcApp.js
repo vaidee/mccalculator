@@ -7,7 +7,7 @@ $scope.submitForm = function()
 {
 	console.log("submitting form...");
     $http({
-            url: "http://mccalculator.herokuapp.com/rest/calc?expression="+$scope.expression,
+            url: "http://mccalculator.herokuapp.com/rest/calc?expression="+encodeURIComponent($scope.expression),
             method: "GET",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         }).success(function(data, status, headers, config) {
